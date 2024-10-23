@@ -112,7 +112,7 @@ export const events = [
     date: '2024-10-05',
     speakers: {
       main: 'James Anderson',
-      guests: ['Greg Parker', 'Katie Bell', 'Victor Cruz'],
+      guests: ['Greg Parker', 'Katie Bell'],
     },
     status: 'Completed',
     attendees: 200,
@@ -232,7 +232,7 @@ export const events = [
     date: '2024-10-10',
     speakers: {
       main: 'Jake Williams',
-      guests: ['Rebecca Clark', 'Oliver Miller', 'Susan Lopez'],
+      guests: ['Rebecca Clark', 'Susan Lopez'],
     },
     status: 'Completed',
     attendees: 140,
@@ -460,7 +460,7 @@ export const events = [
     date: '2024-10-28',
     speakers: {
       main: 'James Lewis',
-      guests: ['Olivia Taylor', 'Ella Martinez', 'Daniel White'],
+      guests: ['Olivia Taylor', 'Daniel White'],
     },
     status: 'Completed',
     attendees: 130,
@@ -508,7 +508,7 @@ export const events = [
     date: '2024-10-30',
     speakers: {
       main: 'Sophie Clark',
-      guests: ['Jason Lee', 'Kate Robinson', 'Oliver Hall'],
+      guests: ['Jason Lee', 'Kate Robinson'],
     },
     status: 'Completed',
     attendees: 190,
@@ -544,7 +544,7 @@ export const events = [
     date: '2024-10-31',
     speakers: {
       main: 'Natalie Turner',
-      guests: ['Daniel Miller', 'Lucy Anderson', 'James Harris'],
+      guests: ['Daniel Miller', 'Lucy Anderson'],
     },
     status: 'In Progress',
     attendees: 160,
@@ -580,7 +580,7 @@ export const events = [
     date: '2024-11-02',
     speakers: {
       main: 'Daniel Adams',
-      guests: ['Hannah White', 'Michael Kim', 'Chloe Jones'],
+      guests: ['Hannah White', 'Chloe Jones'],
     },
     status: 'Completed',
     attendees: 190,
@@ -604,7 +604,7 @@ export const events = [
     date: '2024-11-03',
     speakers: {
       main: 'Thomas Lee',
-      guests: ['Ella Williams', 'Lucas Johnson', 'Sophia Martinez'],
+      guests: ['Ella Williams', 'Sophia Martinez'],
     },
     status: 'Completed',
     attendees: 160,
