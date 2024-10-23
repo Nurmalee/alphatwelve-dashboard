@@ -24,7 +24,7 @@ const Select = ({
         'relative flex w-full flex-1 items-center rounded text-center',
         prop === 'recent'
           ? 'md:min-w-[125px] md:max-w-[125px]'
-          : 'md:min-w-[100px] md:max-w-[100px]'
+          : 'md:min-w-[105px] md:max-w-[105px]'
       )}>
       <select
         className={clsx(
@@ -49,10 +49,10 @@ const Select = ({
       {/* Show clear button if there is a value */}
       {clearable && value && (
         <button
-          className='absolute -right-1 -top-1 flex items-center justify-center rounded-full bg-red-500 text-xs text-white'
+          className='absolute right-4 top-[40%] flex items-center justify-center rounded border border-black bg-white text-xs'
           onClick={handleClear}
           type='button'>
-          <X size={9} />
+          <X size={8} />
         </button>
       )}
     </div>

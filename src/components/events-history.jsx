@@ -291,36 +291,37 @@ const EventsHistory = () => {
               </tr>
             </thead>
             <tbody className='bg-white dark:bg-primary-dark'>
-              {currentEvents.map((event, index) => (
-                <tr
-                  className='cursor-pointer hover:bg-gray-100 dark:hover:bg-[#6A6676]'
-                  onClick={() => handleOpenEventDetails(event)}
-                  key={index}>
-                  <td className='td-row'>{event.name}</td>
-                  <td className='td-row'>{event.date}</td>
-                  <td className='td-row'>{event.speakers.main}</td>
-                  <td className='td-row'>
-                    <button
-                      className={clsx(
-                        'flex items-center justify-between gap-2 rounded-xl border px-3 py-0.5 text-sm font-semibold capitalize',
-                        event.status === 'Completed'
-                          ? 'border-green-200 bg-green-200 text-[#10B981] dark:border-green-600 dark:bg-transparent'
-                          : 'border-blue-200 bg-blue-200 text-[#3B82F6] dark:border-blue-400 dark:bg-transparent'
-                      )}>
-                      {/* #65DDB5 */}
-                      <span
+              {currentEvents.length >= 1 &&
+                currentEvents.map((event, index) => (
+                  <tr
+                    className='cursor-pointer hover:bg-gray-100 dark:hover:bg-[#6A6676]'
+                    onClick={() => handleOpenEventDetails(event)}
+                    key={index}>
+                    <td className='td-row'>{event.name}</td>
+                    <td className='td-row'>{event.date}</td>
+                    <td className='td-row'>{event.speakers.main}</td>
+                    <td className='td-row'>
+                      <button
                         className={clsx(
-                          'block h-1.5 w-1.5 rounded-full border border-none bg-black',
+                          'flex items-center justify-between gap-2 rounded-xl border px-3 py-0.5 text-sm font-semibold capitalize',
                           event.status === 'Completed'
-                            ? 'bg-green-600'
-                            : 'bg-blue-400'
-                        )}
-                      />
-                      {event.status}
-                    </button>
-                  </td>
-                </tr>
-              ))}
+                            ? 'border-green-200 bg-green-200 text-[#10B981] dark:border-green-600 dark:bg-transparent'
+                            : 'border-blue-200 bg-blue-200 text-[#3B82F6] dark:border-blue-400 dark:bg-transparent'
+                        )}>
+                        {/* #65DDB5 */}
+                        <span
+                          className={clsx(
+                            'block h-1.5 w-1.5 rounded-full border border-none bg-black',
+                            event.status === 'Completed'
+                              ? 'bg-green-600'
+                              : 'bg-blue-400'
+                          )}
+                        />
+                        {event.status}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -333,51 +334,61 @@ const EventsHistory = () => {
           <span>Status</span>
         </div>
         <Accordion>
-          {currentEvents.map((event, index) => (
-            <div key={index} className='dark:bg-primary-dark'>
-              <AccordionTitle
-                active={activeAccordionIndex === index}
-                onClick={handleClickAccordion}
-                index={index}>
-                <div className='flex items-center justify-between gap-3 py-2 dark:text-white'>
-                  <div>
-                    <Icon name='dropdown' />
-                    <span>{event.name}</span>
-                  </div>
+          {currentEvents.length >= 1 &&
+            currentEvents.map((event, index) => (
+              <div key={index} className='dark:bg-primary-dark'>
+                <AccordionTitle
+                  active={activeAccordionIndex === index}
+                  onClick={handleClickAccordion}
+                  index={index}>
+                  <div className='flex items-center justify-between gap-3 px-1 py-2 dark:text-white'>
+                    <div>
+                      <Icon name='dropdown' />
+                      <span>{event.name}</span>
+                    </div>
 
-                  <div>
-                    <button
-                      className={clsx(
-                        'flex items-center justify-between gap-2 rounded-xl border px-3 py-0.5 text-sm font-semibold capitalize',
-                        event.status === 'Completed'
-                          ? 'border-green-600 bg-green-600 text-white md:border-green-200 md:bg-green-200 md:text-green-600 md:dark:border-green-600 md:dark:bg-transparent md:dark:text-green-500'
-                          : 'border-blue-500 bg-blue-500 text-white md:border-blue-200 md:bg-blue-200 md:text-blue-500 md:dark:border-blue-400 md:dark:bg-transparent md:dark:text-blue-400'
-                      )}>
-                      <span
+                    <div>
+                      <button
                         className={clsx(
-                          'hidden h-1.5 w-1.5 rounded-full border border-none bg-black md:block',
+                          'flex items-center justify-between gap-2 rounded-xl border px-3 py-0.5 text-sm font-semibold capitalize',
                           event.status === 'Completed'
-                            ? 'bg-green-600'
-                            : 'bg-blue-400'
-                        )}
-                      />
-                      {event.status}
-                    </button>
+                            ? 'border-green-600 bg-green-600 text-white md:border-green-200 md:bg-green-200 md:text-green-600 md:dark:border-green-600 md:dark:bg-transparent md:dark:text-green-500'
+                            : 'border-blue-500 bg-blue-500 text-white md:border-blue-200 md:bg-blue-200 md:text-blue-500 md:dark:border-blue-400 md:dark:bg-transparent md:dark:text-blue-400'
+                        )}>
+                        <span
+                          className={clsx(
+                            'hidden h-1.5 w-1.5 rounded-full border border-none bg-black md:block',
+                            event.status === 'Completed'
+                              ? 'bg-green-600'
+                              : 'bg-blue-400'
+                          )}
+                        />
+                        {event.status}
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </AccordionTitle>
-              <AccordionContent
-                onClick={() => handleOpenEventDetails(event)}
-                active={activeAccordionIndex === index}>
-                <div className='dark:bg-base-dark flex items-center justify-between gap-3 bg-gray-100 p-2 py-4 dark:text-white'>
-                  <span>{event.speakers.main}</span>
-                  <span>{event.date}</span>
-                </div>
-              </AccordionContent>
-            </div>
-          ))}
+                </AccordionTitle>
+                <AccordionContent
+                  onClick={() => handleOpenEventDetails(event)}
+                  active={activeAccordionIndex === index}>
+                  <div className='dark:bg-base-dark flex items-center justify-between gap-3 bg-gray-100 p-2 py-4 dark:text-white'>
+                    <span>{event.speakers.main}</span>
+                    <span>{event.date}</span>
+                  </div>
+                </AccordionContent>
+              </div>
+            ))}
         </Accordion>
       </div>
+
+      {/* NO EVENTS FOUND */}
+      {currentEvents.length === 0 && (
+        <div className='flex h-full w-full items-center justify-center'>
+          <p className='dark:text-white'>
+            No events found. Please adjust/clear your search criteria
+          </p>
+        </div>
+      )}
 
       {/* PAGINATION */}
       <div className='flex flex-wrap items-center justify-between gap-5'>

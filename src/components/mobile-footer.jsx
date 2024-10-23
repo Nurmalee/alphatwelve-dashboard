@@ -7,7 +7,7 @@ import { tabs } from '../data/navigation';
 
 const MobileFooter = () => {
   const { changeActiveTab, activeTab } = useUI();
-  const defaultIconSize = 25;
+  const defaultIconSize = 20;
 
   const newTabs = tabs.filter((tab) =>
     ['Home', 'Events', 'Speakers', 'Reports', 'Profile'].includes(tab.title)
@@ -31,7 +31,7 @@ const MobileFooter = () => {
           onClick={() => changeActiveTab(title)}
           key={title}>
           {cloneElement(icon, { size: defaultIconSize })}
-          <span>{title}</span>
+          <span className='text-sm'>{title}</span>
         </li>
       ))}
     </ul>

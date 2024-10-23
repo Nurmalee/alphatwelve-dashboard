@@ -54,10 +54,13 @@ const EventDetails = ({ isOpen, onClose, event }) => {
             </div>
 
             <p>
-              {event.speakers.guests.length} Guest speakers:
+              <span className='font-semibold'>
+                {event.speakers.guests.length} Guest speakers:
+              </span>
+
               <span className='ml-2'>{event.speakers.guests.join(', ')}</span>
             </p>
-            <p className='font-semibold'>{event.attendees} Attendees</p>
+            <p>{event.attendees} Attendees</p>
           </div>
         </div>
 
