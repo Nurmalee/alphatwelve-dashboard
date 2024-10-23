@@ -341,7 +341,7 @@ const EventsHistory = () => {
                   active={activeAccordionIndex === index}
                   onClick={handleClickAccordion}
                   index={index}>
-                  <div className='flex items-center justify-between gap-3 px-1 py-2 dark:text-white'>
+                  <div className='flex items-center justify-between gap-3 py-2 dark:text-white'>
                     <div>
                       <Icon name='dropdown' />
                       <span>{event.name}</span>
@@ -371,7 +371,7 @@ const EventsHistory = () => {
                 <AccordionContent
                   onClick={() => handleOpenEventDetails(event)}
                   active={activeAccordionIndex === index}>
-                  <div className='dark:bg-base-dark flex items-center justify-between gap-3 bg-gray-100 p-2 py-4 dark:text-white'>
+                  <div className='flex items-center justify-between gap-3 bg-gray-100 p-2 py-4 dark:bg-base-dark dark:text-white'>
                     <span>{event.speakers.main}</span>
                     <span>{event.date}</span>
                   </div>
